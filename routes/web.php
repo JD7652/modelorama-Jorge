@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Productcontroller;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -19,28 +20,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/index-productos', function () {
-    // $product = Product::find(2);  //Esto es un equivalente a un select
-    // //Select * from products where id=2;
+Route::get('/index-producto', [Productcontroller::class, 'index']);
 
 
-    /*
-    //crear nuevo producto
-    $product = new Product();
+Route::get('/create-producto', [Productcontroller::class, 'create']);
 
-    $product->name = 'Pacifico media';
-    $product->product_number = '5543';
-    $product->desc = 'Cerveza 355ml, clara larger';
-    $product->branch = 'Pacifico';
-    $product->price = '20.00';
-
-    $product->save();
-*/
-
-    $product = Product::orderBy('name', 'desc')
-        ->select('name', 'price')  //Esto aydua a solamente seleccionar las filas o columnas que uqiero ver nada más
-        ->take(2)
-        ->get();
-
-    return $product;
-});
+Route::get('/show-producto', [Productcontroller::class, 'show']);
