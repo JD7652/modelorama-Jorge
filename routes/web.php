@@ -19,10 +19,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/addP', function () {
+    $product = new Product();
+
+    $product->name = 'Corona';
+    $product->branch = 'Modelo';
+    $product->desc = 'Cerveza 355ml';
+    $product->price = '20.00';
+    $product->product_number = 86787;
+
+    $product->save();
+    return  $product;
+});
+
 
 Route::get('/index-producto', [Productcontroller::class, 'index']);
 
 
 Route::get('/create-producto', [Productcontroller::class, 'create']);
 
-Route::get('/show-producto', [Productcontroller::class, 'show']);
+Route::get('/show-producto/{product}', [Productcontroller::class, 'show']);
