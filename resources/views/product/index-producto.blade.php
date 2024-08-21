@@ -19,13 +19,10 @@
 
 
     @foreach ($products as $product )
-        <p>Nombre:</p><p>{{$product->name}}</p>
-        <p>Precio:</p><p>{{$product->price}}</p>
-        <p>Descripcion:</p><p>{{$product->desc}}</p>
 
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <a href="/show-producto/{{$product->id}}"> {{$product->name}}</a>
+                <a href="{{route('producto.show',$product->id)}}">{{$product->name}}</a>
             </th>
             <td class="px-6 py-4">
                 {{$product->desc}}
@@ -43,6 +40,8 @@
 </tbody>
 </table>
     </div>
+    {{$products->links()}}
+
 
     <br>
 </x-app-layout>
