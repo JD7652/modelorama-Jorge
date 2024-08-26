@@ -33,9 +33,11 @@ Route::get('/addP', function () {
 });
 
 
-Route::get('/index-producto', [Productcontroller::class, 'index'])->name('producto.index');
+Route::get('/product', [Productcontroller::class, 'index'])->name('producto.index');
 
 
-Route::get('/create-producto', [Productcontroller::class, 'create'])->name('producto.create');
+Route::get('/product-create', [Productcontroller::class, 'create'])->name('producto.create');
 
-Route::get('/show-producto/{product}', [Productcontroller::class, 'show'])->name('producto.show');
+Route::post('/product', [Productcontroller::class, 'store'])->name('producto.store');
+
+Route::get('/product-show/{product}', [Productcontroller::class, 'show'])->name('producto.show');

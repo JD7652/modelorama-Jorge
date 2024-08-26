@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    //protected $table = 'products';  //Con esto, podríamos llegar a usar la tabla para¿?.... Investigar
+    //protected $table='protected';
+    protected $fillable = ['name', 'desc', 'product_number', 'branch', 'price'];
 }
