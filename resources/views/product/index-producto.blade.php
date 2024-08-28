@@ -1,5 +1,33 @@
 <x-app-layout>
-    Listado de Productos <br>
+<footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="https://clubmodelorama.mx/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="https://laguiadefranquicias.com/wp-content/uploads/2023/10/%C2%BFQue-precio-tiene-una-franquicia-Modelorama.png" class="h-20" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Modelorama</span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6"></a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6"></a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6"></a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline"></a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://flowbite.com/" class="hover:underline">Jorge del Carmen</a></span>
+    </div>
+</footer>
+
+
+    <br>
     <a href="{{route('producto.index')}}"></a>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -30,9 +58,6 @@
             </td>
             <td class="px-6 py-4">
                 {{$product->price}}
-            </td>
-            <td class="px-6 py-4">
-                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
             </td>
         </tr>
 
