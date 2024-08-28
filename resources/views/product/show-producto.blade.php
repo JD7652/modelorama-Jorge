@@ -11,4 +11,14 @@
     <p class="text-6xl text-gray-900 dark:text-white">Precio</p>
     <p class="text-4xl font-thin text-gray-900 dark:text-white">{{$productDetail->price}}</p>
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+    <a href="{{route ('producto.edit', $productDetail)}}">Editar Producto</a>
+
+    
+{{-- 
+    <form action="{{route('producto.destroy', $product)}}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">Eliminar</button>
+    </form> --}}
+
 </x-app-layout>

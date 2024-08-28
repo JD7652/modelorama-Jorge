@@ -38,4 +38,30 @@ class Productcontroller extends Controller
 
         return redirect()->route('producto.index');
     }
+
+    public function edit(Product $product)
+    {
+        return view('product.edit', compact('product'));
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $product->name = $request->name;
+        $product->branch = $request->branch;
+        $product->product_number = $request->product_number;
+        $product->price = $request->price;
+        $product->desc = $request->desc;
+
+        $product->save();
+
+        return redirect()->route('producto.index');
+    }
+
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+
+        return redirect()->route('producto.index');
+    }
 }
