@@ -14,11 +14,11 @@
     <a href="{{route ('producto.edit', $productDetail)}}">Editar Producto</a>
 
     
-{{-- 
-    <form action="{{route('producto.destroy', $product)}}" method="POST">
+
+    <form action="{{route('producto.destroy', $productDetail)}}" method="POST">
         @csrf
         @method('delete')
         <button type="submit">Eliminar</button>
-    </form> --}}
+    </form>
 
 </x-app-layout>
