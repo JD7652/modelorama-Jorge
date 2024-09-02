@@ -47,3 +47,5 @@ Route::get('/product/{product}/edit', [Productcontroller::class, 'edit'])->name(
 Route::put('/product/{product}', [Productcontroller::class, 'update'])->name('producto.update');
 
 Route::delete('/product/{product}', [Productcontroller::class, 'destroy'])->name('producto.destroy');
+
+Route::get('/products-report', [Productcontroller::class, 'getReport'])->name('producto.report');
